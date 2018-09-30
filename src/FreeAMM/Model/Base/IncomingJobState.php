@@ -9,7 +9,7 @@ namespace FreeAMM\Model\Base;
 abstract class IncomingJobState extends \FreeAMM\Model\StorageModel\IncomingJobState
 {
     protected $ijs_id = 0;
-    protected $ijs_crm = null;
+    protected $ijs_cli = null;
     protected $ijs_app = null;
     protected $ijs_job = null;
     protected $ijs_state = null;

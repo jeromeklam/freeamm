@@ -20,8 +20,8 @@ abstract class IncomingJobState extends \FreeFW\Core\StorageModel
         'type'        => FFCST::TYPE_BIGINT,
         'options'     => [FFCST::OPTION_PK]
     ];
-    protected static $PRP_IJS_CRM = [
-        'destination' => 'ijs_crm',
+    protected static $PRP_IJS_CLI = [
+        'destination' => 'ijs_cli',
         'type'        => FFCST::TYPE_SELECT,
         'options'     => [FFCST::OPTION_REQUIRED]
     ];
@@ -64,7 +64,7 @@ abstract class IncomingJobState extends \FreeFW\Core\StorageModel
     {
         return [
             'ijs_id'       => self::$PRP_IJS_ID,
-            'ijs_crm'      => self::$PRP_IJS_CRM,
+            'ijs_cli'      => self::$PRP_IJS_CLI,
             'ijs_app'      => self::$PRP_IJS_APP,
             'ijs_job'      => self::$PRP_IJS_JOB,
             'ijs_state'    => self::$PRP_IJS_STATE,

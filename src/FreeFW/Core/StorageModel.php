@@ -48,6 +48,45 @@ abstract class StorageModel extends \FreeFW\Core\Model implements \FreeFW\Interf
     }
 
     /**
+     *
+     * {@inheritDoc}
+     * @see \FreeFW\Interfaces\StorageStrategyInterface::findFirst()
+     */
+    public function findFirst($p_filters = null)
+    {
+        $this->strategy->findFirst($this, $p_filters);
+        return $this->isValid();
+    }
+
+    /**
+     * Set from array
+     *
+     * @param array $p_array
+     *
+     * @return \FreeFW\Core\Model
+     */
+    public function setFromArray($p_array)
+    {
+        if ($p_array instanceof \stdClass) {
+            $p_array = (array)$p_array;
+        }
+        if (is_array($p_array)) {
+            $properties = $this->getProperties();
+            $fields     = [];
+            foreach ($properties as $key => $prop) {
+                $fields[$prop['destination']] = $key;
+            }
+            foreach ($p_array as $field => $value) {
+                if (array_key_exists($field, $fields)) {
+                    $property = $fields[$field];
+                    $setter   = 'set' . \FreeFW\Tools\PBXString::toCamelCase($property, true);
+                    $this->$setter($value);
+                }
+            }
+        }
+    }
+
+    /**
      * Return object source
      *
      * @return string

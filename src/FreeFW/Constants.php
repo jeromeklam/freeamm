@@ -76,4 +76,5 @@ class Constants
     const OPTION_PK               = 'PK';
     const OPTION_JSONIGNORE       = 'NOJSON';
     const OPTION_LOCAL            = 'LOCAL';
+    const OPTION_UNIQ             = 'UNIQ';
 }

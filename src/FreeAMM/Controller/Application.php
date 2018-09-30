@@ -36,12 +36,12 @@ class Application extends \FreeFW\Core\Controller
     public function setJobStatus(\Psr\Http\Message\ServerRequestInterface $p_request)
     {
         $this->logger->debug('FreeAMM.Controller.Service.getStatus.start');
-        $crmCode = $p_request->getAttribute('crm_code', false);
+        $cliCode = $p_request->getAttribute('cli_code', false);
         $appCode = $p_request->getAttribute('app_code', false);
         $jobCode = $p_request->getAttribute('job_code', false);
-        if ($crmCode !== false && $appCode !== false) {
+        if ($cliCode !== false && $appCode !== false) {
             $AppService = \FreeFW\DI\DI::get('FreeAMM::Service::Application');
-            $AppService->addJobState($crmCode, $appCode, $jobCode);
+            $AppService->addJobState($cliCode, $appCode, $jobCode);
         } else {
             // Oups, wrong parameters...
         }

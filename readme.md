@@ -1,7 +1,5 @@
-# OMEGA_Queue
+# FreeAMM
 
-Composant windev de gestion des workflows en mode Petri-Net
+Projet pour le mnotiring et la gestion d'applications.
 
-* Documentation sur les [concepts](concept.md)
-* Documentation [technique](technique.md)
-* Utilisation dans [Windev](windev.md)
+Le but de ce projet est d'avoir un outil de contrôle des applications et des impacts des coupures de service.
