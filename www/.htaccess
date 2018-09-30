@@ -1,0 +1,8 @@
+    RewriteEngine On
+
+    # API
+    RewriteCond %{REQUEST_URI} ^/api
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !\.(xml|txt|js|css|scss|less|jpg|gif|jpeg|png|ico|ttf|yml)$
+    RewriteRule ^(.*)$ index.php?_request=$1 [QSA,L]
