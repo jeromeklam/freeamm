@@ -177,7 +177,8 @@ class Route implements \Psr\Log\LoggerAwareInterface
             }
         } catch (\Exception $ex) {
             // @todo
-            var_dump($ex);die;
+            var_dump($ex);
+            die;
         }
         return false;
     }

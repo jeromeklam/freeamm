@@ -77,7 +77,7 @@ class PDOStorage implements
             // Get PDO and execute
             $query = $this->provider->prepare($sql, array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
             if ($query->execute($fields)) {
-
+                $code = '';
             } else {
                 $this->logger->debug('PDOStorage.create.error : ' . print_r($query->errorInfo(), true));
                 $localErr = $query->errorInfo();

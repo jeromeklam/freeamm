@@ -29,7 +29,7 @@ abstract class Model
                     'Property ' . $property . ' doesn\'t exists !'
                 );
             }
-            switch($matches[1]) {
+            switch ($matches[1]) {
                 case 'set':
                     return $this->set($property, $p_args[0]);
                 case 'get':
