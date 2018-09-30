@@ -96,7 +96,7 @@ class Router
             }
             $currentDir = rtrim($this->base_path, '/');
             $this->logger->debug('router.findRoute.request : ' . $requestUrl);
-            foreach ($this->routes->getRoutes() as $idx =>$oneRoute) {
+            foreach ($this->routes->getRoutes() as $idx => $oneRoute) {
                 $this->logger->debug('router.findRoute.test : ' . $oneRoute->getUrl());
                 if (strtoupper($p_request->getMethod()) == strtoupper($oneRoute->getMethod())) {
                     if ($currentDir != '/') {
@@ -130,7 +130,7 @@ class Router
                             }
                         }
                     }
-                    foreach($params as $name => $value) {
+                    foreach ($params as $name => $value) {
                         $p_request = $p_request->withAttribute($name, $value);
                     }
                     $this->logger->debug('router.findRoute.match : ' . $oneRoute->getUrl());

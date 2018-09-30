@@ -334,7 +334,8 @@ class PBXString
      *
      * @return mixed
      */
-    public static function withoutAccent($p_string) {
+    public static function withoutAccent($p_string)
+    {
         $a = array(
             'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Æ', 'Ç', 'È', 'É', 'Ê', 'Ë', 'Ì', 'Í', 'Î', 'Ï', 'Ð',
             'Ñ', 'Ò', 'Ó', 'Ô', 'Õ', 'Ö', 'Ø', 'Ù', 'Ú', 'Û', 'Ü', 'Ý', 'ß', 'à', 'á', 'â', 'ã',

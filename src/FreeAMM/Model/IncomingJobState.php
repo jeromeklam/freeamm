@@ -6,7 +6,7 @@ namespace FreeAMM\Model;
  *
  * @author jeromeklam
  */
-class IncomingJobState extends  \FreeAMM\Model\Base\IncomingJobState implements
+class IncomingJobState extends \FreeAMM\Model\Base\IncomingJobState implements
     \FreeFW\Interfaces\ValidatorInterface
 {
 
