@@ -81,6 +81,6 @@ abstract class IncomingJobState extends \FreeFW\Core\StorageModel
      */
     public static function getSource()
     {
-        return 'tech_incomingjobstate';
+        return 'tech_incoming_job_state';
     }
 }

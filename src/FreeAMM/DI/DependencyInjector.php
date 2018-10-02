@@ -129,4 +129,25 @@ class DependencyInjector extends \FreeFW\Core\DI implements \FreeFW\Interfaces\D
         }
         throw new \FreeFW\Core\FreeFWException(sprintf('Class %s not found !', $class_name));
     }
+
+    /**
+     *
+     * {@inheritDoc}
+     * @see \FreeFW\Interfaces\DependencyInjectorInterface::getMiddleware()
+     */
+    public function getMiddleware($p_name)
+    {
+        $class_name = '\\FreeAMM\Middleware\\' . \FreeFW\Tools\PBXString::toCamelCase($p_name, true);
+        if (class_exists($class_name)) {
+            $cls = new $class_name();
+            if ($cls instanceof \Psr\Log\LoggerAwareInterface) {
+                $cls->setLogger($this->logger);
+            }
+            if ($cls instanceof \FreeFW\Interfaces\ConfigAwareTraitInterface) {
+                $cls->setConfig($this->config);
+            }
+            return $cls;
+        }
+        throw new \FreeFW\Core\FreeFWException(sprintf('Class %s not found !', $class_name));
+    }
 }

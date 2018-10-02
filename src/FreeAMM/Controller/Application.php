@@ -26,6 +26,7 @@ class Application extends \FreeFW\Core\Controller
             // Oups, wrong parameters...
         }
         $this->logger->debug('FreeAMM.Controller.Service.getStatus.end');
+        return $this->createResponse(200);
     }
 
     /**
@@ -46,5 +47,6 @@ class Application extends \FreeFW\Core\Controller
             // Oups, wrong parameters...
         }
         $this->logger->debug('FreeAMM.Controller.Service.getStatus.end');
+        return $this->createResponse(200);
     }
 }

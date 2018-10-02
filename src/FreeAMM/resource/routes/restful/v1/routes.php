@@ -7,7 +7,8 @@ $localRoutes = [
         'method'     => \FreeFW\Router\Route::METHOD_GET,
         'url'        => '/v1/application/:cli_code/:app_code',
         'controller' => 'FreeAMM::Controller::Application',
-        'function'   => 'getStatus'
+        'function'   => 'getStatus',
+        'middleware' => []
     ],
     /**
      * Envoi du status d'un job
@@ -16,7 +17,8 @@ $localRoutes = [
         'method'     => \FreeFW\Router\Route::METHOD_POST,
         'url'        => '/v1/job/:cli_code/:app_code/:job_code',
         'controller' => 'FreeAMM::Controller::Application',
-        'function'   => 'setJobStatus'
+        'function'   => 'setJobStatus',
+        'middleware' => []
     ]
 ];
 return $localRoutes;
