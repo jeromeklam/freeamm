@@ -11,6 +11,14 @@
             "email" : "jeromeklam@free.fr"
         }
     ],
+    "config": {
+        "secure-http" : false,
+        "bin-dir"     : "install",
+        "localdev": {
+            "jeromeklam/freefw": "../freefw",
+            "jeromeklam/freesso": "../freesso"
+        }
+    },
     "minimum-stability": "dev",
     "require" : {
         "php"                                  : ">=7.0",
@@ -20,12 +28,13 @@
         "psr/cache"                            : "*",
         "psr/http-message"                     : "*",
         "psr/http-server-middleware"           : "*",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle"                    : "^6.3",
+        "jeromeklam/freesso"                   : "*",
+        "jeromeklam/freefw"                    : "*"
     },
     "autoload" : {
         "psr-4" : {
-            "FreeAMM\\" : "src/FreeAMM/",
-            "FreeFW\\" : "src/FreeFW/"
+            "FreeAMM\\" : "src/FreeAMM/"
         }
     },
     "require-dev": {
