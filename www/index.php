@@ -83,8 +83,7 @@ try {
                 $stoCfg['paswd']
             );
             $storage->setLogger($myLogger);
-            \FreeFW\DI\DI::setShared('FreeAMM::Storage::' . $key, $storage);
-            \FreeFW\DI\DI::setShared('FreeSSO::Storage::' . $key, $storage);
+            \FreeFW\DI\DI::setShared('Storage::' . $key, $storage);
         }
     } else {
         throw new \FreeFW\Core\FreeFWException('No storage configuration found !');
@@ -105,13 +104,9 @@ try {
     /**
      * FreeAmm DI
      */
-    $freeAmmDI = \FreeAMM\DI\DependencyInjector::getInstance($myConfig, $myLogger);
-    \FreeFW\DI\DI::add('FreeAMM', $freeAmmDI);
-    /**
-     * FreeSSO DI
-     */
-    $freeSSODI = \FreeSSO\DI\DependencyInjector::getInstance($myConfig, $myLogger);
-    \FreeFW\DI\DI::add('FreeSSO', $freeSSODI);
+    \FreeFW\DI\DI::registerDI('FreeFW', $myConfig, $myLogger);
+    \FreeFW\DI\DI::registerDI('FreeAMM', $myConfig, $myLogger);
+    \FreeFW\DI\DI::registerDI('FreeSSO', $myConfig, $myLogger);
     /**
      * On va chercher les routes des modules, ...
      */
