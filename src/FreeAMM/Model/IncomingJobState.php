@@ -7,7 +7,7 @@ namespace FreeAMM\Model;
  * @author jeromeklam
  */
 class IncomingJobState extends \FreeAMM\Model\Base\IncomingJobState implements
-    \FreeFW\Interfaces\ValidatorInterface
+    \FreeFW\Interfaces\ApiResponseInterface
 {
 
     /**
@@ -22,20 +22,6 @@ class IncomingJobState extends \FreeAMM\Model\Base\IncomingJobState implements
      */
     const STATE_OK    = 'OK';
     const STATE_ERROR = 'ERROR';
-
-    /**
-     * Behaviour
-     */
-    use \FreeFW\Behaviour\ValidatorTrait;
-
-    /**
-     * Validate model
-     *
-     * @return void
-     */
-    protected function validate()
-    {
-    }
 
     /**
      *

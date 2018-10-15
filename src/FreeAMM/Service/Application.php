@@ -45,9 +45,8 @@ class Application extends \FreeFW\Core\Service
             ->setIjsApp($p_app_code)
             ->setIjsJob($p_job_code)
         ;
-        if (!$ijsModel->create()) {
-            var_export($ijsModel->getErrors());
-        }
+        $ijsModel->create();
         $this->logger->debug('FreeAMM.Service.Application.addJobState.end');
+        return $ijsModel;
     }
 }

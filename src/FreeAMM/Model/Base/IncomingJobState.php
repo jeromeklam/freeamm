@@ -12,6 +12,7 @@ abstract class IncomingJobState extends \FreeAMM\Model\StorageModel\IncomingJobS
     protected $ijs_cli = null;
     protected $ijs_app = null;
     protected $ijs_job = null;
+    protected $ijs_vm = null;
     protected $ijs_state = null;
     protected $ijs_ts = null;
     protected $ijs_status = null;

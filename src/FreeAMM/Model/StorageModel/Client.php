@@ -16,18 +16,18 @@ abstract class Client extends \FreeFW\Core\StorageModel
      * @var array
      */
     protected static $PRP_CLI_ID = [
-        'destination' => 'cli_id',
-        'type'        => FFCST::TYPE_BIGINT,
-        'options'     => [FFCST::OPTION_PK]
+        FFCST::PROPERTY_PRIVATE => 'cli_id',
+        FFCST::PROPERTY_TYPE    => FFCST::TYPE_BIGINT,
+        FFCST::PROPERTY_OPTIONS => [FFCST::OPTION_PK]
     ];
     protected static $PRP_CLI_CODE = [
-        'destination' => 'cli_code',
-        'type'        => FFCST::TYPE_STRING,
-        'options'     => [FFCST::OPTION_REQUIRED]
+        FFCST::PROPERTY_PRIVATE => 'cli_code',
+        FFCST::PROPERTY_TYPE    => FFCST::TYPE_STRING,
+        FFCST::PROPERTY_OPTIONS => [FFCST::OPTION_REQUIRED]
     ];
     protected static $PRP_CLI_NAME = [
-        'destination' => 'cli_name',
-        'type'        => FFCST::TYPE_STRING
+        FFCST::PROPERTY_PRIVATE => 'cli_name',
+        FFCST::PROPERTY_TYPE    => FFCST::TYPE_STRING
     ];
 
     /**

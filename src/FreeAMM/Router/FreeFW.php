@@ -29,6 +29,7 @@ class FreeFW
                         ->setUrl($apiRoute['url'])
                         ->setController($apiRoute['controller'])
                         ->setFunction($apiRoute['function'])
+                        ->setSecured($apiRoute['secured'])
                     ;
                     $routes->addRoute($myRoute);
                 }
