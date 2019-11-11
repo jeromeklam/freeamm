@@ -1,7 +1,7 @@
 {
     "name"        : "jeromeklam/freeamm",
     "type"        : "application",
-    "description" : "Free Applicarion Management & Monitoring",
+    "description" : "Free Application Management & Monitoring",
     "keywords"    : ["FREE", "MONITORING", "PHP"],
     "homepage"    : "http://github.com/jeromeklam",
     "license"     : "gpl",

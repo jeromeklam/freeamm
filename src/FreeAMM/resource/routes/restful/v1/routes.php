@@ -5,11 +5,18 @@ $localRoutes = [
      */
     'freeamm.app.get-status' => [
         'method'     => \FreeFW\Router\Route::METHOD_GET,
-        'url'        => '/v1/application/:cli_code/:app_code',
+        'url'        => '/v1/incoming_job',
         'controller' => 'FreeAMM::Controller::Application',
-        'function'   => 'getStatus',
-        'secured'    => false,
-        'middleware' => []
+        'function'   => 'getAll',
+        'auth'       => \FreeFW\Router\Route::AUTH_NONE,
+        'middleware' => [],
+        'model'      => 'FreeAMM::Model::IncomingJobState',
+        'results' => [
+            '200' => [
+                'type'  => \FreeFW\Router\Route::RESULT_LIST,
+                'model' => 'FreeAMM::Model::IncomingJobState'
+            ]
+        ]
     ],
     /**
      * Envoi du status d'un job
@@ -19,7 +26,7 @@ $localRoutes = [
         'url'        => '/v1/incoming_job',
         'controller' => 'FreeAMM::Controller::Application',
         'function'   => 'createOne',
-        'secured'    => false,
+        'auth'       => \FreeFW\Router\Route::AUTH_NONE,
         'middleware' => []
     ]
 ];

@@ -111,6 +111,7 @@ try {
      * On va chercher les routes des modules, ...
      */
     $freeFWRoutes  = \FreeFW\Router\FreeFW::getRoutes();
+    $freeSSORoutes = \FreeSSO\Router\FreeFW::getRoutes();
     $freeAMMRoutes = \FreeAMM\Router\FreeFW::getRoutes();
     /**
      * GO...
@@ -118,6 +119,7 @@ try {
     $app
         ->setEventManager($myEvents)
         ->addRoutes($freeAMMRoutes)
+        ->addRoutes($freeSSORoutes)
         ->addRoutes($freeFWRoutes)
     ;
     // GO

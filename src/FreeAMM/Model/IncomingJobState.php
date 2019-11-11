@@ -33,5 +33,6 @@ class IncomingJobState extends \FreeAMM\Model\Base\IncomingJobState implements
         $this->ijs_id     = 0;
         $this->ijs_state  = self::STATE_OK;
         $this->ijs_status = self::STATUS_PENDING;
+        return $this;
     }
 }
